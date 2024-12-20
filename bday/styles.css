@@ -1,0 +1,46 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #ff9a9e, #fad0c4);
+    color: #333;
+}
+.header {
+    text-align: center;
+    padding: 1rem;
+    background-color: #ffe4e1;
+}
+.main-content {
+    padding: 2rem;
+    text-align: center;
+}
+.gallery-preview, .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+    margin-top: 2rem;
+}
+button {
+    background: #ff7e79;
+    color: #fff;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+button:hover {
+    background: #e06b67;
+}
+form {
+    margin: 2rem auto;
+    text-align: left;
+    max-width: 300px;
+}
+form input {
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
