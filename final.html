@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Video Display</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @tailwind base;
+        @tailwind components;
+        @tailwind utilities;
+
+        @layer utilities {
+            .fade-in {
+                @apply opacity-0 transition-opacity duration-500 ease-in-out;
+            }
+            .fade-in-active {
+                @apply opacity-100;
+            }
+            .bounce {
+                animation: bounce 1.5s infinite;
+            }
+            @keyframes bounce {
+                0%, 100% {
+                    transform: translateY(0);
+                }
+                50% {
+                    transform: translateY(-10px);
+                }
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-100 min-h-screen flex flex-col items-center justify-center space-y-10">
+
+    <!-- Video Section -->
+    <div class="group p-5 bg-white rounded-lg shadow-lg transition-transform transform hover:scale-105 hover:shadow-xl fade-in">
+        <h1 class="text-2xl font-bold text-gray-800 mb-4 text-center">Watch the Video</h1>
+        <video controls class="rounded-lg shadow-md max-w-full border border-gray-300">
+            <source src="VID20241225014449.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <!-- Modal Trigger -->
+    <button id="openModal" class="px-6 py-3 bg-green-500 text-white font-bold rounded-lg shadow-md hover:bg-green-600">
+        Open Modal
+    </button>
+
+    <script>
+        const modal = document.getElementById('modal');
+        const openModal = document.getElementById('openModal');
+        const closeModal = document.getElementById('closeModal');
+
+        openModal.addEventListener('click', () => {
+            modal.classList.remove('hidden');
+            setTimeout(() => modal.classList.add('fade-in-active'), 10);
+        });
+
+        closeModal.addEventListener('click', () => {
+            modal.classList.remove('fade-in-active');
+            setTimeout(() => modal.classList.add('hidden'), 500);
+        });
+    </script>
+
+</body>
+</html>
