@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -110,8 +111,30 @@
             color: #555;
             font-size: 0.9rem;
         }
+
+        .redirect-button {
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .redirect-button a {
+            display: inline-block;
+            background: #ffb347;
+            color: #fff;
+            padding: 0.8rem 1.5rem;
+            font-size: 1rem;
+            border-radius: 5px;
+            text-decoration: none;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background 0.3s;
+        }
+
+        .redirect-button a:hover {
+            background: #e59435;
+        }
     </style>
 </head>
+
 <body>
     <header class="header">
         <h1>Our Memories</h1>
@@ -147,7 +170,8 @@
                 <p>Messed Up Pic</p>
             </div>
             <div class="gallery-item">
-                <img src="images\Screenshot_2024-07-10-19-50-37-77_92460851df6f172a4592fca41cc2d2e6.jpg" alt="Description 3">
+                <img src="images\Screenshot_2024-07-10-19-50-37-77_92460851df6f172a4592fca41cc2d2e6.jpg"
+                    alt="Description 3">
                 <p>Gundu Pilla</p>
             </div>
             <div class="gallery-item">
@@ -155,7 +179,8 @@
                 <p>Body Builder Pose.. dont mind the pic</p>
             </div>
             <div class="gallery-item">
-                <img src="images\Screenshot_2023-12-29-20-04-27-18_1c337646f29875672b5a61192b9010f9.jpg" alt="Description 3">
+                <img src="images\Screenshot_2023-12-29-20-04-27-18_1c337646f29875672b5a61192b9010f9.jpg"
+                    alt="Description 3">
                 <p>Not illegal but cutieeeee..</p>
             </div>
             <div class="gallery-item">
@@ -196,6 +221,15 @@
             </div>
             <!-- Repeat for all images -->
         </div>
+        <!-- Redirect Button -->
+        <div id="redirect-button" style="text-align: center; display: none; margin-top: 20px;">
+            <a href="final.html"
+                style="background: #ffb347; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; font-size: 1.2rem; transition: background 0.3s;">
+                Go to Final Page
+            </a>
+        </div>
+
+        </div>
     </main>
     <script>
         function login() {
@@ -207,10 +241,12 @@
             if (username === correctUsername && password === correctPassword) {
                 document.getElementById('login-form').style.display = 'none';
                 document.getElementById('gallery').style.display = 'grid';
+                document.getElementById('redirect-button').style.display = 'block';
             } else {
                 alert('Invalid username or password');
             }
         }
     </script>
 </body>
+
 </html>
